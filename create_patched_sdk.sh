@@ -119,9 +119,9 @@ else
 	echo 1
 	ls -A "$xcode_developer_path/Platforms/AppleTVOS.platform/"
 	echo 2
-	ls -A "$xcode_developer_path/Platforms/AppleTVOS.platform/Library/Developer/CoreSimulator/Profiles/Runtimes"
+	ls -A "$xcode_developer_path/Platforms/AppleTVOS.platform/Developer/Library/CoreSimulator/Profiles/Runtimes"
 	echo 3
-	ls -A "$xcode_developer_path/Platforms/AppleTVOS.platform/Library/Developer/CoreSimulator/Profiles/Runtimes/tvOS.simruntime/"
+	ls -A "$xcode_developer_path/Platforms/AppleTVOS.platform/Developer/Library/CoreSimulator/Profiles/Runtimes/tvOS.simruntime/"
 
 	xcode_sim_runtime_path="$xcode_developer_path/Platforms/AppleTVOS.platform/Library/Developer/CoreSimulator/Profiles/Runtimes/tvOS.simruntime/Contents/Resources/RuntimeRoot"
 	if ! [[ -d $xcode_sim_runtime_path ]]; then
