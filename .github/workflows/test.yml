@@ -19,15 +19,10 @@ jobs:
 
       - name: Test
         run: |
-          set -x
           TBD=$HOME/tbd
           curl -Lo $TBD https://github.com/inoahdev/tbd/releases/download/2.2/tbd-mac
           sudo chmod +x $TBD
-          $TBD --help
-          command -v $TBD; echo $?
-          stat $TBD
           ./create_patched_sdk.sh yes $HOME/sdks - - $TBD /Applications/Xcode.app ${{ matrix.os }}
-          echo "RESULT: $?"
 
       - name: How'd we do?
         run: |
