@@ -116,7 +116,6 @@ if [[ $sdk_platform == iOS ]]; then
 	xcode_plat_sdks_path="$xcode_developer_path/Platforms/iPhoneOS.platform/Developer/SDKs"
 	xcode_default_sdk_path="$xcode_plat_sdks_path/iPhoneOS.sdk"
 else
-	find "$xcode_developer_path/Platforms/AppleTVOS.platform" -name "RuntimeRoot" -print
 	xcode_sim_runtime_path="$xcode_developer_path/Platforms/AppleTVOS.platform/Library/Developer/CoreSimulator/Profiles/Runtimes/tvOS.simruntime/Contents/Resources/RuntimeRoot"
 	if ! [[ -d $xcode_sim_runtime_path ]]; then
 		xcode_sim_runtime_path="$xcode_developer_path/Platforms/AppleTVOS.platform/Developer/Library/CoreSimulator/Profiles/Runtimes/tvOS.simruntime/Contents/Resources/RuntimeRoot"
