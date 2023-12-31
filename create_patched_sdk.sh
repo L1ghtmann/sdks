@@ -126,7 +126,7 @@ fi
 
 preferred_xcode_sdk_path=""
 for xcode_sdk_path in "$xcode_plat_sdks_path"*; do
-	xcode_sdk_real=$(realpath "$xcode_sdk_path")
+	xcode_sdk_real=$(readlink -f "$xcode_sdk_path")
 
 	if [[ $xcode_sdk_real == $xcode_default_sdk_path ]]; then
 		preferred_xcode_sdk_path=$xcode_sdk_path
