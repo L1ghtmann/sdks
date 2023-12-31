@@ -85,6 +85,7 @@ if [[ $# -lt 5 ]] || ignored $tbd_tool; then
 		exit 1
 	fi
 else
+	tbd_tool=$5
 	if ! [[ -x $tbd_tool ]]; then
 		echo "Provided tbd-tool ($tbd_tool) doesn't exist or isn't executable"
 		exit 1
