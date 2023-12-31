@@ -22,7 +22,7 @@ jobs:
           set -x
           TBD=/usr/local/bin/tbd
           curl -Lo $TBD https://github.com/inoahdev/tbd/releases/download/2.2/tbd-mac
-          chmod +x $TBD
+          command -v $TBD; echo $?
           stat $TBD
           ./create_patched_sdk.sh yes $HOME/sdks - - $TBD /Applications/Xcode.app ${{ matrix.os }}
           echo "RESULT: $?"
