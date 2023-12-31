@@ -26,4 +26,5 @@ jobs:
 
       - name: How'd we do?
         run: |
-          ls -R $HOME/sdks/ | wc -l
+          echo "count: $(ls -R $HOME/sdks/ | wc -l)"
+          ls -R

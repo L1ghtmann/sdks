@@ -128,8 +128,6 @@ preferred_xcode_sdk_path=""
 for xcode_sdk_path in "$xcode_plat_sdks_path/"*; do
 	xcode_sdk_real=$(readlink -f "$xcode_sdk_path")
 
-	echo "real: $xcode_sdk_real; default: $xcode_default_sdk_path"
-
 	if [[ $xcode_sdk_real == $xcode_default_sdk_path ]]; then
 		preferred_xcode_sdk_path=$xcode_sdk_path
 	fi
@@ -230,9 +228,10 @@ else
 					"-o" "${write_options[@]}" $no_overwrite "$sdks_output_path_single_sdk_path/Library")
 
 		"$tbd_tool" "${parse_paths[@]}" "${write_paths[@]}" $no_warnings "${tbd_options[@]}" "${archs_option[@]}" -v $version
+		echo "command: $($tbd_tool ${parse_paths[@]} ${write_paths[@]} $no_warnings ${tbd_options[@]} ${archs_option[@]} -v $version)"
 	fi
 
 	if [[ $? -ne 0 ]]; then
-		echo "Failed to create tbds from iPhoneSimulator runtime for $sdk_platform $xcode_sdk_version"
+		echo "Failed to create tbds from simulator runtime for $sdk_platform $xcode_sdk_version"
 	fi
 fi
