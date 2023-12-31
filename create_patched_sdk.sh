@@ -15,7 +15,7 @@ Options:
   - tbd_tool (str)
 	Path to 'tbd' tool from inoahdev (default: 'tbd')
   - xcode_installation_path (str)
-	Path to target Xcode version (default: '/Applications/Xcode.app/')
+	Path to target Xcode version
   - sdk_platform (str)
 	Target platform for patched SDK (default: 'iOS'; alternatively 'tvOS')
 Note: {} options are optional to provide, and can be ignored with a '-'

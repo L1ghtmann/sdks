@@ -22,7 +22,7 @@ jobs:
           TBD=$HOME/tbd
           curl -Lo $TBD https://github.com/inoahdev/tbd/releases/download/2.2/tbd-mac
           sudo chmod +x $TBD
-          ./create_patched_sdk.sh yes $HOME/sdks - - $TBD $(find ~/Library/Developer/Xcode/DerivedData -name "*.app" -type d -prune | tail -n 1) ${{ matrix.os }}
+          ./create_patched_sdk.sh yes $HOME/sdks - - $TBD $(xcode-select -p | sed -e 's/Contents\/Developer//g' ) ${{ matrix.os }}
 
       - name: How'd we do?
         run: |
